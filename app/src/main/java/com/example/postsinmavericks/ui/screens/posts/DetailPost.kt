@@ -27,20 +27,27 @@ fun DetailPost(
     postsViewModel.updateId(id = postId)
 
     state?.let { post ->
-        Surface(modifier = Modifier.fillMaxSize()) {
-            Column(
-                modifier = Modifier.padding(horizontal = 8.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(text = "Author: ${post.id} || ${post.userId}")
-                Text(text = post.title, maxLines = 2)
-                Text(
-                    text = post.body,
-                    maxLines = 3,
-                    overflow = TextOverflow.Ellipsis
-                )
-            }
+        DetailPost(post = post)
+    }
+}
+
+@Composable
+private fun DetailPost(
+    post: NetworkModel
+) {
+    Surface(modifier = Modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier.padding(horizontal = 8.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(text = "Author: ${post.id} || ${post.userId}")
+            Text(text = post.title, maxLines = 2)
+            Text(
+                text = post.body,
+                maxLines = 3,
+                overflow = TextOverflow.Ellipsis
+            )
         }
     }
 }

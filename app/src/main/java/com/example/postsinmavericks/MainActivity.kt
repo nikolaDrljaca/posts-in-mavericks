@@ -21,9 +21,9 @@ class MainActivity : ComponentActivity() {
         Mavericks.initialize(this)
         setContent {
             PostsInMavericksTheme {
-                //Counter()
+                Counter()
                 //Posts()
-                AppNavigator()
+                //AppNavigator()
             }
         }
     }

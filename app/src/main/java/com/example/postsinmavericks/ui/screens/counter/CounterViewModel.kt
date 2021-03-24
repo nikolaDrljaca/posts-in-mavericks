@@ -10,6 +10,8 @@ class CounterViewModel(initialState: CounterState):
 
     fun incrementCount() = setState { copy(count = count + 1) }
 
+    fun resetCount() = setState { copy(count = 0) }
+
     data class CounterState(
         @PersistState val count: Int = 0
     ): MavericksState {
