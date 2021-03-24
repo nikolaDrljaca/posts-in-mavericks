@@ -10,7 +10,9 @@ import com.airbnb.mvrx.compose.collectAsState
 import com.airbnb.mvrx.compose.mavericksViewModel
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.postsinmavericks.R
 import com.example.postsinmavericks.ui.screens.counter.CounterViewModel.CounterState
 
 @Composable
@@ -36,6 +38,21 @@ private fun CounterScreen(
             FloatingActionButton(onClick = { onFabClicked() }) {
                 Icon(imageVector = Icons.Rounded.Add, contentDescription = null)
             }
+        },
+        topBar = {
+            TopAppBar(
+                content = {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.app_name),
+                            style = MaterialTheme.typography.h5
+                        )
+                    }
+                }
+            )
         }
     ) {
         Column(
